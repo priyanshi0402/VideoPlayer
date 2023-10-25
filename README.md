@@ -20,4 +20,4 @@ This video player includes features like play, pause, rewind, fast-forward, swit
 1. Clone the repository to your local machine:
 
 ```bash
-git clone git clone https://github.com/priyanshi0402/VideoPlayer
+git clone https://github.com/priyanshi0402/VideoPlayer
