@@ -62,7 +62,13 @@ class VideoPlayer: UIView {
     
     func setupVideoPlayer(url: URL) {
         let asset = AVAsset(url: url)
+//        let videoPath = "your_video_path.mp4"
+        
         setVideoAsset(asset: asset)
+        
+        let subtitleDecoder = SubtitleDecoder(videoPath: url.path)
+        // Decode and process subtitles
+        subtitleDecoder.decodeSubtitles()
     }
     
     private func setVideoAsset(asset: AVAsset) {

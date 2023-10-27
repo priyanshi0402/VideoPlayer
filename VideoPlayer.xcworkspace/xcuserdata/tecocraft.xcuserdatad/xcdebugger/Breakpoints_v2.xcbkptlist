@@ -14,8 +14,8 @@
             filePath = "VideoPlayer/Helpers/Custom Class/VideoPlayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "extractSubtitles(from:)"
             landmarkType = "7">
             <Locations>
@@ -49,23 +49,22 @@
                   endingLineNumber = "287"
                   offsetFromSymbolStart = "28">
                </Location>
+               <Location
+                  uuid = "B8707679-688F-4AE2-9816-1CB00E749D19 - 9d09e6afebbc39a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.VideoPlayer.extractSubtitles(from: __C.AVAsset) -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Tecocraft_C/iOS%20demo/VideoPlayer/VideoPlayer/Helpers/Custom%20Class/VideoPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB382979-ADD2-43F4-9D3C-1BB4C2DD0420"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayer/Helpers/Custom Class/VideoPlayer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "switchTrack(index:isFirstTime:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,9 +77,41 @@
             filePath = "VideoPlayer/Helpers/Custom Class/VideoPlayer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "switchTrack(index:isFirstTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "241363FA-4F26-48B5-93F9-448FBD961DB7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Helpers/Custom Class/SwiftDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "decodeSubtitles()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C047F8EA-DD5F-485F-A102-285A47EFA8F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Helpers/Custom Class/SwiftDecoder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "decodeSubtitles()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
