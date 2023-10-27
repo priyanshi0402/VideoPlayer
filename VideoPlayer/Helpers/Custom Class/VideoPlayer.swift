@@ -55,6 +55,9 @@ class VideoPlayer: UIView {
         layer.addSublayer(self.videoPlayerLayer)
         videoPlayerLayer.player = player
         videoPlayerLayer.contentsScale = UIScreen.main.scale
+        player.appliesMediaSelectionCriteriaAutomatically = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     func setupVideoPlayer(url: URL) {
@@ -64,6 +67,7 @@ class VideoPlayer: UIView {
     
     private func setVideoAsset(asset: AVAsset) {
         videoPlayerLayer.videoGravity = .resizeAspect
+        
         self.switchTrack(index: 0, isFirstTime: true)
     }
     
@@ -79,19 +83,46 @@ class VideoPlayer: UIView {
         }
     }
     
+    @objc fileprivate func applicationDidEnterBackground() {
+        self.pauseVideo()
+    }
+    
     open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         guard let asset = object as? AVPlayerItem, let keyPath = keyPath else { return }
+    
+        if keyPath == #keyPath(AVPlayerItem.currentMediaSelection) {
+            // Update the displayed subtitle
+            updateSubtitle()
+        }
 
         if asset == player.currentItem && keyPath == "status" {
             if asset.status == .readyToPlay {
                 if status == .new {
                     status = .readyToPlay
                 }
+//                if let group = AVAsset(url: Bundle.main.url(forResource: "test_video", withExtension: "mp4")!).mediaSelectionGroup(forMediaCharacteristic: .legible), let subtitleTrack = group.options.last {
+//                    self.player.currentItem?.select(subtitleTrack, in: group)
+//                }
                 addTimeObserver()
                 playVideo()
             }
         }
     }
+    
+    func updateSubtitle() {
+//            let subtitleGroup = playerItem?.asset.mediaSelectionGroup(forMediaCharacteristic: .legible)
+//            let selectedSubtitle = playerItem?.selectedMediaOption(in: subtitleGroup!)
+//            
+//            // Check if there is a selected subtitle track
+//            if let subtitle = selectedSubtitle {
+//                // Get the subtitle text and display it
+//                subtitleLabel?.text = subtitle.displayName
+//            } else {
+//                // No subtitle selected, clear the label
+//                subtitleLabel?.text = ""
+//            }
+        }
+        
     
     fileprivate func addTimeObserver() {
         if let observer = timeObserver {
@@ -117,6 +148,17 @@ class VideoPlayer: UIView {
 // MARK: - Videoplayer actions
 extension VideoPlayer {
     
+    func toggleSubtitle() {
+        guard let playerItem = self.player.currentItem else { return }
+        if let group = playerItem.asset.mediaSelectionGroup(forMediaCharacteristic: .legible) {
+            let locale = Locale(identifier: "en-EN")
+            let options = AVMediaSelectionGroup.mediaSelectionOptions(from: group.options, with: locale)
+            if let option = options.first {
+                self.player.currentItem?.select(option, in: group)
+            }
+        }
+    }
+    
     func switchTrack(index: Int, isFirstTime: Bool = false) {
         deinitObservers()
         guard let url = Bundle.main.url(forResource: "test_video", withExtension: "mp4") else { return }
@@ -124,25 +166,126 @@ extension VideoPlayer {
         let composition = AVMutableComposition()
         
         let currentTime = self.player.currentTime()
+        
+//        let subtitleTrack = asset.tracks(withMediaType: .subtitle).first!
+//        let compositionTrack1 = composition.addMutableTrack(withMediaType: .subtitle, preferredTrackID: kCMPersistentTrackID_Invalid)
+//        do {
+//            try compositionTrack1?.insertTimeRange(CMTimeRange(start: .zero, duration: asset.duration), of: subtitleTrack, at: .zero)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+        
         let videoTrack = asset.tracks(withMediaType: .video)[index]
+        let subTrack = asset.tracks(withMediaType: .subtitle)[index]
+        
+        let subtitleTrack = composition.addMutableTrack(withMediaType: .text, preferredTrackID: kCMPersistentTrackID_Invalid)
         
         let compositionTrack = composition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
         do {
             try compositionTrack?.insertTimeRange(CMTimeRange(start: .zero, duration: asset.duration), of: videoTrack, at: .zero)
+            try subtitleTrack?.insertTimeRange(CMTimeRange(start: .zero, duration: asset.duration),
+                                                       of: subTrack, at: .zero)
         } catch {
             print(error.localizedDescription)
         }
-        let playerItem = AVPlayerItem(asset: composition)
+        
+        
+        
+        
+        
+//        if let subtitleGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .legible)?.options.last {
+//            let subtitleTrack = asset.tracks(withMediaType: .subtitle).first
+//
+//            if let subtitleTrackComposition = composition.addMutableTrack(withMediaType: .subtitle, preferredTrackID: kCMPersistentTrackID_Invalid) {
+//                if let segments = subtitleTrack?.segments {
+//                    for segment in segments {
+//                        do {
+//                            try subtitleTrackComposition.insertTimeRange(segment.timeMapping.target, of: subtitleTrack!, at: segment.timeMapping.source.start)
+//                        } catch {
+//                            print(error.localizedDescription)
+//                        }
+//                        
+//                    }
+//                }
+//            }
+
+//             Extract the subtitle text
+//            let formatDescriptions = asset.tracks(withMediaType: .text).first?.formatDescriptions as! [CMFormatDescription]
+//
+//            for formatDescription in formatDescriptions {
+//                let locale = CMFormatDescriptionGetExtension(formatDescription, extensionKey: kCMFormatDescriptionExtension_Language as CFString) as? String
+//                let mediaSubType = CMFormatDescriptionGetMediaSubType(formatDescription)
+//                
+//                if mediaSubType == kCMMediaSubType_Subtitle {
+//                    if let locale = locale {
+//                        let metadataGroup = asset.metadata(forFormat: formatDescription as! AVMetadataFormat)
+//                        let items = AVMetadataItem.metadataItems(from: metadataGroup, filteredAndSortedAccordingToPreferredLanguages: [.commonKeyTitle])
+//                        
+//                        for item in items {
+//                            if let value = item.stringValue, !value.isEmpty {
+//                                print("Locale: \(locale), Subtitle: \(value)")
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+        
+//        let subtitleGroup = asset.mediaSelectionGroup(forMediaCharacteristic: .legible)
+//        let subtitles = subtitleGroup?.options
+        
+        // Find the desired subtitle track (e.g., by language or name)
+//        let selectedSubtitle = subtitles?.first(where: { $0.displayName == "Unknown language" }) // Change "English" to the desired language or name
+//        
+//        // Select the desired subtitle track
+//        if let selectedSubtitle = selectedSubtitle {
+//            playerItem.select(selectedSubtitle, in: subtitleGroup!)
+//        }
         // Replace the current player item with the new player item
+        let playerItem = AVPlayerItem(asset: composition)
+       
         player.replaceCurrentItem(with: playerItem)
         if !isFirstTime {
             player.seek(to: currentTime, toleranceBefore: .zero, toleranceAfter: .zero)
         }
-        
+
+
         player.play()
+//        self.player.isClosedCaptionDisplayEnabled = true
+//        self.extractSubtitles(from: asset)
         player.currentItem?.addObserver(self, forKeyPath: "status", options: [], context: nil)
 
     }
+    
+    func extractSubtitles(from asset: AVAsset) {
+        // Create an AVAssetReader
+//        do {
+//            
+//            let reader = try AVAssetReader(asset: asset)
+//            
+//            if let subtitleTrack = asset.tracks(withMediaType: AVMediaType.subtitle).first {
+//                let outputSettings: [String: Any] = [
+//                    kCMMetadataFormatDescriptionMetadataSpecificationKey as String: [
+//                        kCMMetadataFormatDescriptionMetadataSpecificationKey_Identifier as String: AVMetadataIdentifier.iTunesMetadata
+//                    ]
+//                ]
+//                
+//                let trackOutput = AVAssetReaderTrackOutput(track: subtitleTrack, outputSettings: outputSettings)
+//                reader.add(trackOutput)
+//                reader.startReading()
+//                
+//                while let sampleBuffer = trackOutput.copyNextSampleBuffer() {
+//                    if let metadata = CMSampleBufferGetBufferText(sampleBuffer) {
+//                        // Process and display the subtitle text
+//                        let subtitleText = String(data: metadata, encoding: .utf8)
+//                        print(subtitleText ?? "")
+//                    }
+//                }
+//            }
+//        } catch {
+//            print("Error reading subtitles: \(error.localizedDescription)")
+//        }
+    }
+
     
     public func seek(min: Double = 0.0, max: Double = 1.0, value: Double) {
         let value = rangeMap(value, min: min, max: max, newMin: 0.0, newMax: 1.0)

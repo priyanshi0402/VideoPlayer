@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,64 @@
 		A52069482AE64B99001A8CCE /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52069472AE64B99001A8CCE /* VideoPlayer.swift */; };
 		A5769A862AE1607A0080D951 /* Scrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5769A852AE1607A0080D951 /* Scrubber.swift */; };
 		A5769A882AE160A40080D951 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5769A872AE160A40080D951 /* Math.swift */; };
+		A59053292AEB884A001E3BE6 /* FFmpegKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59053282AEB884A001E3BE6 /* FFmpegKit */; };
+		A590532B2AEB884A001E3BE6 /* Libavcodec in Frameworks */ = {isa = PBXBuildFile; productRef = A590532A2AEB884A001E3BE6 /* Libavcodec */; };
+		A590532D2AEB884A001E3BE6 /* Libavfilter in Frameworks */ = {isa = PBXBuildFile; productRef = A590532C2AEB884A001E3BE6 /* Libavfilter */; };
+		A590532F2AEB884A001E3BE6 /* Libavformat in Frameworks */ = {isa = PBXBuildFile; productRef = A590532E2AEB884A001E3BE6 /* Libavformat */; };
+		A59053312AEB884A001E3BE6 /* Libavutil in Frameworks */ = {isa = PBXBuildFile; productRef = A59053302AEB884A001E3BE6 /* Libavutil */; };
+		A590540F2AEB9237001E3BE6 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053D22AEB9236001E3BE6 /* AudioPlayerView.swift */; };
+		A59054102AEB9237001E3BE6 /* KSAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053D42AEB9236001E3BE6 /* KSAVPlayer.swift */; };
+		A59054112AEB9237001E3BE6 /* KSOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053D52AEB9236001E3BE6 /* KSOptions.swift */; };
+		A59054132AEB9237001E3BE6 /* KSPlayerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053D72AEB9236001E3BE6 /* KSPlayerLayer.swift */; };
+		A59054142AEB9237001E3BE6 /* KSVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053D82AEB9236001E3BE6 /* KSVideoPlayer.swift */; };
+		A59054152AEB9237001E3BE6 /* MediaPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053D92AEB9236001E3BE6 /* MediaPlayerProtocol.swift */; };
+		A59054162AEB9237001E3BE6 /* PlayerDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053DA2AEB9236001E3BE6 /* PlayerDefines.swift */; };
+		A59054172AEB9237001E3BE6 /* AppKitExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053DC2AEB9236001E3BE6 /* AppKitExtend.swift */; };
+		A59054182AEB9237001E3BE6 /* PlayerToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053DD2AEB9236001E3BE6 /* PlayerToolBar.swift */; };
+		A59054192AEB9237001E3BE6 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053DE2AEB9236001E3BE6 /* PlayerView.swift */; };
+		A590541A2AEB9237001E3BE6 /* UIKitExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053DF2AEB9236001E3BE6 /* UIKitExtend.swift */; };
+		A590541B2AEB9237001E3BE6 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E02AEB9236001E3BE6 /* Utility.swift */; };
+		A590541C2AEB9237001E3BE6 /* UXKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E12AEB9236001E3BE6 /* UXKit.swift */; };
+		A590541D2AEB9237001E3BE6 /* AudioEnginePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E32AEB9236001E3BE6 /* AudioEnginePlayer.swift */; };
+		A590541E2AEB9237001E3BE6 /* AudioRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E42AEB9236001E3BE6 /* AudioRecognizer.swift */; };
+		A590541F2AEB9237001E3BE6 /* AudioRendererPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E52AEB9236001E3BE6 /* AudioRendererPlayer.swift */; };
+		A59054202AEB9237001E3BE6 /* AVFFmpegExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E62AEB9236001E3BE6 /* AVFFmpegExtension.swift */; };
+		A59054212AEB9237001E3BE6 /* AVFoundationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E72AEB9236001E3BE6 /* AVFoundationExtension.swift */; };
+		A59054222AEB9237001E3BE6 /* CircularBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E82AEB9236001E3BE6 /* CircularBuffer.swift */; };
+		A59054232AEB9237001E3BE6 /* EmbedDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053E92AEB9236001E3BE6 /* EmbedDataSouce.swift */; };
+		A59054242AEB9237001E3BE6 /* FFmpegAssetTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053EA2AEB9236001E3BE6 /* FFmpegAssetTrack.swift */; };
+		A59054252AEB9237001E3BE6 /* FFmpegDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053EB2AEB9236001E3BE6 /* FFmpegDecode.swift */; };
+		A59054262AEB9237001E3BE6 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053EC2AEB9236001E3BE6 /* Filter.swift */; };
+		A59054272AEB9237001E3BE6 /* KSMEPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053ED2AEB9236001E3BE6 /* KSMEPlayer.swift */; };
+		A59054282AEB9237001E3BE6 /* MEPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053EE2AEB9236001E3BE6 /* MEPlayerItem.swift */; };
+		A59054292AEB9237001E3BE6 /* MEPlayerItemTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053EF2AEB9236001E3BE6 /* MEPlayerItemTrack.swift */; };
+		A590542A2AEB9237001E3BE6 /* MetalPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F02AEB9236001E3BE6 /* MetalPlayView.swift */; };
+		A590542B2AEB9237001E3BE6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F12AEB9236001E3BE6 /* Model.swift */; };
+		A590542C2AEB9237001E3BE6 /* Resample.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F22AEB9236001E3BE6 /* Resample.swift */; };
+		A590542D2AEB9237001E3BE6 /* SubtitleDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F32AEB9236001E3BE6 /* SubtitleDecode.swift */; };
+		A590542E2AEB9237001E3BE6 /* VideoToolboxDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F42AEB9236001E3BE6 /* VideoToolboxDecode.swift */; };
+		A590542F2AEB9237001E3BE6 /* BufferProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F62AEB9236001E3BE6 /* BufferProtocol.swift */; };
+		A59054302AEB9237001E3BE6 /* DisplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F72AEB9236001E3BE6 /* DisplayModel.swift */; };
+		A59054312AEB9237001E3BE6 /* MetalRender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F82AEB9236001E3BE6 /* MetalRender.swift */; };
+		A59054322AEB9237001E3BE6 /* MotionSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053F92AEB9236001E3BE6 /* MotionSensor.swift */; };
+		A59054332AEB9237001E3BE6 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = A59053FA2AEB9236001E3BE6 /* Shaders.metal */; };
+		A59054342AEB9237001E3BE6 /* Transforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053FB2AEB9236001E3BE6 /* Transforms.swift */; };
+		A59054352AEB9237001E3BE6 /* KSParseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053FD2AEB9236001E3BE6 /* KSParseProtocol.swift */; };
+		A59054362AEB9237001E3BE6 /* KSSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053FE2AEB9236001E3BE6 /* KSSubtitle.swift */; };
+		A59054372AEB9237001E3BE6 /* SubtitleDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59053FF2AEB9236001E3BE6 /* SubtitleDataSouce.swift */; };
+		A59054382AEB9237001E3BE6 /* AirPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054012AEB9236001E3BE6 /* AirPlayView.swift */; };
+		A59054392AEB9237001E3BE6 /* KSVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054022AEB9236001E3BE6 /* KSVideoPlayerView.swift */; };
+		A590543A2AEB9237001E3BE6 /* LiveTextImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054032AEB9236001E3BE6 /* LiveTextImage.swift */; };
+		A590543B2AEB9237001E3BE6 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054042AEB9236001E3BE6 /* Slider.swift */; };
+		A590543C2AEB9237001E3BE6 /* BrightnessVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054062AEB9236001E3BE6 /* BrightnessVolume.swift */; };
+		A590543D2AEB9237001E3BE6 /* IOSVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054072AEB9236001E3BE6 /* IOSVideoPlayerView.swift */; };
+		A590543E2AEB9237001E3BE6 /* KSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054082AEB9236001E3BE6 /* KSMenu.swift */; };
+		A590543F2AEB9237001E3BE6 /* KSPlayerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054092AEB9236001E3BE6 /* KSPlayerItem.swift */; };
+		A59054402AEB9237001E3BE6 /* MacVideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590540A2AEB9236001E3BE6 /* MacVideoPlayerView.swift */; };
+		A59054412AEB9237001E3BE6 /* PlayerFullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590540B2AEB9236001E3BE6 /* PlayerFullScreenViewController.swift */; };
+		A59054422AEB9237001E3BE6 /* PlayerTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590540C2AEB9236001E3BE6 /* PlayerTransitionAnimator.swift */; };
+		A59054432AEB9237001E3BE6 /* SeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590540D2AEB9236001E3BE6 /* SeekView.swift */; };
+		A59054442AEB9237001E3BE6 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590540E2AEB9236001E3BE6 /* VideoPlayerView.swift */; };
 		A59964DC2AE25E740027A007 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59964DB2AE25E740027A007 /* iOSDropDown.swift */; };
 		A59964E32AE275C90027A007 /* test_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A59964E22AE275C90027A007 /* test_video.mp4 */; };
 /* End PBXBuildFile section */
@@ -35,6 +93,59 @@
 		A52069472AE64B99001A8CCE /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		A5769A852AE1607A0080D951 /* Scrubber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrubber.swift; sourceTree = "<group>"; };
 		A5769A872AE160A40080D951 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		A59053D22AEB9236001E3BE6 /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		A59053D42AEB9236001E3BE6 /* KSAVPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSAVPlayer.swift; sourceTree = "<group>"; };
+		A59053D52AEB9236001E3BE6 /* KSOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSOptions.swift; sourceTree = "<group>"; };
+		A59053D72AEB9236001E3BE6 /* KSPlayerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSPlayerLayer.swift; sourceTree = "<group>"; };
+		A59053D82AEB9236001E3BE6 /* KSVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSVideoPlayer.swift; sourceTree = "<group>"; };
+		A59053D92AEB9236001E3BE6 /* MediaPlayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPlayerProtocol.swift; sourceTree = "<group>"; };
+		A59053DA2AEB9236001E3BE6 /* PlayerDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDefines.swift; sourceTree = "<group>"; };
+		A59053DC2AEB9236001E3BE6 /* AppKitExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKitExtend.swift; sourceTree = "<group>"; };
+		A59053DD2AEB9236001E3BE6 /* PlayerToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerToolBar.swift; sourceTree = "<group>"; };
+		A59053DE2AEB9236001E3BE6 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		A59053DF2AEB9236001E3BE6 /* UIKitExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtend.swift; sourceTree = "<group>"; };
+		A59053E02AEB9236001E3BE6 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A59053E12AEB9236001E3BE6 /* UXKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UXKit.swift; sourceTree = "<group>"; };
+		A59053E32AEB9236001E3BE6 /* AudioEnginePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEnginePlayer.swift; sourceTree = "<group>"; };
+		A59053E42AEB9236001E3BE6 /* AudioRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecognizer.swift; sourceTree = "<group>"; };
+		A59053E52AEB9236001E3BE6 /* AudioRendererPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRendererPlayer.swift; sourceTree = "<group>"; };
+		A59053E62AEB9236001E3BE6 /* AVFFmpegExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVFFmpegExtension.swift; sourceTree = "<group>"; };
+		A59053E72AEB9236001E3BE6 /* AVFoundationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVFoundationExtension.swift; sourceTree = "<group>"; };
+		A59053E82AEB9236001E3BE6 /* CircularBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularBuffer.swift; sourceTree = "<group>"; };
+		A59053E92AEB9236001E3BE6 /* EmbedDataSouce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedDataSouce.swift; sourceTree = "<group>"; };
+		A59053EA2AEB9236001E3BE6 /* FFmpegAssetTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFmpegAssetTrack.swift; sourceTree = "<group>"; };
+		A59053EB2AEB9236001E3BE6 /* FFmpegDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFmpegDecode.swift; sourceTree = "<group>"; };
+		A59053EC2AEB9236001E3BE6 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		A59053ED2AEB9236001E3BE6 /* KSMEPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSMEPlayer.swift; sourceTree = "<group>"; };
+		A59053EE2AEB9236001E3BE6 /* MEPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEPlayerItem.swift; sourceTree = "<group>"; };
+		A59053EF2AEB9236001E3BE6 /* MEPlayerItemTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MEPlayerItemTrack.swift; sourceTree = "<group>"; };
+		A59053F02AEB9236001E3BE6 /* MetalPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalPlayView.swift; sourceTree = "<group>"; };
+		A59053F12AEB9236001E3BE6 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A59053F22AEB9236001E3BE6 /* Resample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resample.swift; sourceTree = "<group>"; };
+		A59053F32AEB9236001E3BE6 /* SubtitleDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleDecode.swift; sourceTree = "<group>"; };
+		A59053F42AEB9236001E3BE6 /* VideoToolboxDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoToolboxDecode.swift; sourceTree = "<group>"; };
+		A59053F62AEB9236001E3BE6 /* BufferProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferProtocol.swift; sourceTree = "<group>"; };
+		A59053F72AEB9236001E3BE6 /* DisplayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayModel.swift; sourceTree = "<group>"; };
+		A59053F82AEB9236001E3BE6 /* MetalRender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalRender.swift; sourceTree = "<group>"; };
+		A59053F92AEB9236001E3BE6 /* MotionSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionSensor.swift; sourceTree = "<group>"; };
+		A59053FA2AEB9236001E3BE6 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		A59053FB2AEB9236001E3BE6 /* Transforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transforms.swift; sourceTree = "<group>"; };
+		A59053FD2AEB9236001E3BE6 /* KSParseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSParseProtocol.swift; sourceTree = "<group>"; };
+		A59053FE2AEB9236001E3BE6 /* KSSubtitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSSubtitle.swift; sourceTree = "<group>"; };
+		A59053FF2AEB9236001E3BE6 /* SubtitleDataSouce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleDataSouce.swift; sourceTree = "<group>"; };
+		A59054012AEB9236001E3BE6 /* AirPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
+		A59054022AEB9236001E3BE6 /* KSVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSVideoPlayerView.swift; sourceTree = "<group>"; };
+		A59054032AEB9236001E3BE6 /* LiveTextImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTextImage.swift; sourceTree = "<group>"; };
+		A59054042AEB9236001E3BE6 /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
+		A59054062AEB9236001E3BE6 /* BrightnessVolume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessVolume.swift; sourceTree = "<group>"; };
+		A59054072AEB9236001E3BE6 /* IOSVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSVideoPlayerView.swift; sourceTree = "<group>"; };
+		A59054082AEB9236001E3BE6 /* KSMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSMenu.swift; sourceTree = "<group>"; };
+		A59054092AEB9236001E3BE6 /* KSPlayerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KSPlayerItem.swift; sourceTree = "<group>"; };
+		A590540A2AEB9236001E3BE6 /* MacVideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacVideoPlayerView.swift; sourceTree = "<group>"; };
+		A590540B2AEB9236001E3BE6 /* PlayerFullScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFullScreenViewController.swift; sourceTree = "<group>"; };
+		A590540C2AEB9236001E3BE6 /* PlayerTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTransitionAnimator.swift; sourceTree = "<group>"; };
+		A590540D2AEB9236001E3BE6 /* SeekView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeekView.swift; sourceTree = "<group>"; };
+		A590540E2AEB9236001E3BE6 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		A59964DB2AE25E740027A007 /* iOSDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 		A59964E22AE275C90027A007 /* test_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_video.mp4; sourceTree = "<group>"; };
 		D5F6C12AE3BF256AA41EAAD4 /* Pods_VideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +156,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59053292AEB884A001E3BE6 /* FFmpegKit in Frameworks */,
 				2D5A0FBE0C53E013F0B51CEE /* Pods_VideoPlayer.framework in Frameworks */,
+				A590532B2AEB884A001E3BE6 /* Libavcodec in Frameworks */,
+				A59053312AEB884A001E3BE6 /* Libavutil in Frameworks */,
+				A590532F2AEB884A001E3BE6 /* Libavformat in Frameworks */,
+				A590532D2AEB884A001E3BE6 /* Libavfilter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +206,7 @@
 		A51592332AE151F600EA0FD7 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A59053D02AEB9236001E3BE6 /* KSPlayer */,
 				A59964E12AE2759C0027A007 /* Resource */,
 				A59964DD2AE2754C0027A007 /* Helpers */,
 				A51592342AE151F600EA0FD7 /* AppDelegate.swift */,
@@ -101,6 +218,130 @@
 				A51592422AE151F800EA0FD7 /* Info.plist */,
 			);
 			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		A59053D02AEB9236001E3BE6 /* KSPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A59053D12AEB9236001E3BE6 /* Audio */,
+				A59053D32AEB9236001E3BE6 /* AVPlayer */,
+				A59053DB2AEB9236001E3BE6 /* Core */,
+				A59053E22AEB9236001E3BE6 /* MEPlayer */,
+				A59053F52AEB9236001E3BE6 /* Metal */,
+				A59053FC2AEB9236001E3BE6 /* Subtitle */,
+				A59054002AEB9236001E3BE6 /* SwiftUI */,
+				A59054052AEB9236001E3BE6 /* Video */,
+			);
+			path = KSPlayer;
+			sourceTree = "<group>";
+		};
+		A59053D12AEB9236001E3BE6 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				A59053D22AEB9236001E3BE6 /* AudioPlayerView.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		A59053D32AEB9236001E3BE6 /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A59053D42AEB9236001E3BE6 /* KSAVPlayer.swift */,
+				A59053D52AEB9236001E3BE6 /* KSOptions.swift */,
+				A59053D72AEB9236001E3BE6 /* KSPlayerLayer.swift */,
+				A59053D82AEB9236001E3BE6 /* KSVideoPlayer.swift */,
+				A59053D92AEB9236001E3BE6 /* MediaPlayerProtocol.swift */,
+				A59053DA2AEB9236001E3BE6 /* PlayerDefines.swift */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		A59053DB2AEB9236001E3BE6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A59053DC2AEB9236001E3BE6 /* AppKitExtend.swift */,
+				A59053DD2AEB9236001E3BE6 /* PlayerToolBar.swift */,
+				A59053DE2AEB9236001E3BE6 /* PlayerView.swift */,
+				A59053DF2AEB9236001E3BE6 /* UIKitExtend.swift */,
+				A59053E02AEB9236001E3BE6 /* Utility.swift */,
+				A59053E12AEB9236001E3BE6 /* UXKit.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A59053E22AEB9236001E3BE6 /* MEPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A59053E32AEB9236001E3BE6 /* AudioEnginePlayer.swift */,
+				A59053E42AEB9236001E3BE6 /* AudioRecognizer.swift */,
+				A59053E52AEB9236001E3BE6 /* AudioRendererPlayer.swift */,
+				A59053E62AEB9236001E3BE6 /* AVFFmpegExtension.swift */,
+				A59053E72AEB9236001E3BE6 /* AVFoundationExtension.swift */,
+				A59053E82AEB9236001E3BE6 /* CircularBuffer.swift */,
+				A59053E92AEB9236001E3BE6 /* EmbedDataSouce.swift */,
+				A59053EA2AEB9236001E3BE6 /* FFmpegAssetTrack.swift */,
+				A59053EB2AEB9236001E3BE6 /* FFmpegDecode.swift */,
+				A59053EC2AEB9236001E3BE6 /* Filter.swift */,
+				A59053ED2AEB9236001E3BE6 /* KSMEPlayer.swift */,
+				A59053EE2AEB9236001E3BE6 /* MEPlayerItem.swift */,
+				A59053EF2AEB9236001E3BE6 /* MEPlayerItemTrack.swift */,
+				A59053F02AEB9236001E3BE6 /* MetalPlayView.swift */,
+				A59053F12AEB9236001E3BE6 /* Model.swift */,
+				A59053F22AEB9236001E3BE6 /* Resample.swift */,
+				A59053F32AEB9236001E3BE6 /* SubtitleDecode.swift */,
+				A59053F42AEB9236001E3BE6 /* VideoToolboxDecode.swift */,
+			);
+			path = MEPlayer;
+			sourceTree = "<group>";
+		};
+		A59053F52AEB9236001E3BE6 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				A59053F62AEB9236001E3BE6 /* BufferProtocol.swift */,
+				A59053F72AEB9236001E3BE6 /* DisplayModel.swift */,
+				A59053F82AEB9236001E3BE6 /* MetalRender.swift */,
+				A59053F92AEB9236001E3BE6 /* MotionSensor.swift */,
+				A59053FA2AEB9236001E3BE6 /* Shaders.metal */,
+				A59053FB2AEB9236001E3BE6 /* Transforms.swift */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		A59053FC2AEB9236001E3BE6 /* Subtitle */ = {
+			isa = PBXGroup;
+			children = (
+				A59053FD2AEB9236001E3BE6 /* KSParseProtocol.swift */,
+				A59053FE2AEB9236001E3BE6 /* KSSubtitle.swift */,
+				A59053FF2AEB9236001E3BE6 /* SubtitleDataSouce.swift */,
+			);
+			path = Subtitle;
+			sourceTree = "<group>";
+		};
+		A59054002AEB9236001E3BE6 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A59054012AEB9236001E3BE6 /* AirPlayView.swift */,
+				A59054022AEB9236001E3BE6 /* KSVideoPlayerView.swift */,
+				A59054032AEB9236001E3BE6 /* LiveTextImage.swift */,
+				A59054042AEB9236001E3BE6 /* Slider.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		A59054052AEB9236001E3BE6 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A59054062AEB9236001E3BE6 /* BrightnessVolume.swift */,
+				A59054072AEB9236001E3BE6 /* IOSVideoPlayerView.swift */,
+				A59054082AEB9236001E3BE6 /* KSMenu.swift */,
+				A59054092AEB9236001E3BE6 /* KSPlayerItem.swift */,
+				A590540A2AEB9236001E3BE6 /* MacVideoPlayerView.swift */,
+				A590540B2AEB9236001E3BE6 /* PlayerFullScreenViewController.swift */,
+				A590540C2AEB9236001E3BE6 /* PlayerTransitionAnimator.swift */,
+				A590540D2AEB9236001E3BE6 /* SeekView.swift */,
+				A590540E2AEB9236001E3BE6 /* VideoPlayerView.swift */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		A59964DD2AE2754C0027A007 /* Helpers */ = {
@@ -148,6 +389,13 @@
 			dependencies = (
 			);
 			name = VideoPlayer;
+			packageProductDependencies = (
+				A59053282AEB884A001E3BE6 /* FFmpegKit */,
+				A590532A2AEB884A001E3BE6 /* Libavcodec */,
+				A590532C2AEB884A001E3BE6 /* Libavfilter */,
+				A590532E2AEB884A001E3BE6 /* Libavformat */,
+				A59053302AEB884A001E3BE6 /* Libavutil */,
+			);
 			productName = VideoPlayer;
 			productReference = A51592312AE151F600EA0FD7 /* VideoPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +424,9 @@
 				Base,
 			);
 			mainGroup = A51592282AE151F600EA0FD7;
+			packageReferences = (
+				A59053272AEB884A001E3BE6 /* XCLocalSwiftPackageReference "../../../../Users/tecocraft/Downloads/FFmpegKit-0340040c9ee9c3a7efceff73ec92476767ef9802" */,
+			);
 			productRefGroup = A51592322AE151F600EA0FD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -246,13 +497,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A59054222AEB9237001E3BE6 /* CircularBuffer.swift in Sources */,
+				A590542A2AEB9237001E3BE6 /* MetalPlayView.swift in Sources */,
+				A59054262AEB9237001E3BE6 /* Filter.swift in Sources */,
+				A59054382AEB9237001E3BE6 /* AirPlayView.swift in Sources */,
+				A590541B2AEB9237001E3BE6 /* Utility.swift in Sources */,
+				A590541A2AEB9237001E3BE6 /* UIKitExtend.swift in Sources */,
 				A59964DC2AE25E740027A007 /* iOSDropDown.swift in Sources */,
+				A59054152AEB9237001E3BE6 /* MediaPlayerProtocol.swift in Sources */,
 				A51592392AE151F600EA0FD7 /* ViewController.swift in Sources */,
+				A59054442AEB9237001E3BE6 /* VideoPlayerView.swift in Sources */,
+				A59054332AEB9237001E3BE6 /* Shaders.metal in Sources */,
+				A590543E2AEB9237001E3BE6 /* KSMenu.swift in Sources */,
+				A59054112AEB9237001E3BE6 /* KSOptions.swift in Sources */,
+				A59054312AEB9237001E3BE6 /* MetalRender.swift in Sources */,
+				A59054272AEB9237001E3BE6 /* KSMEPlayer.swift in Sources */,
+				A590540F2AEB9237001E3BE6 /* AudioPlayerView.swift in Sources */,
+				A59054282AEB9237001E3BE6 /* MEPlayerItem.swift in Sources */,
+				A590541D2AEB9237001E3BE6 /* AudioEnginePlayer.swift in Sources */,
+				A59054232AEB9237001E3BE6 /* EmbedDataSouce.swift in Sources */,
+				A59054162AEB9237001E3BE6 /* PlayerDefines.swift in Sources */,
 				A5769A862AE1607A0080D951 /* Scrubber.swift in Sources */,
+				A590541F2AEB9237001E3BE6 /* AudioRendererPlayer.swift in Sources */,
 				A51592352AE151F600EA0FD7 /* AppDelegate.swift in Sources */,
+				A59054342AEB9237001E3BE6 /* Transforms.swift in Sources */,
+				A590543A2AEB9237001E3BE6 /* LiveTextImage.swift in Sources */,
+				A590542F2AEB9237001E3BE6 /* BufferProtocol.swift in Sources */,
+				A59054322AEB9237001E3BE6 /* MotionSensor.swift in Sources */,
+				A59054192AEB9237001E3BE6 /* PlayerView.swift in Sources */,
+				A59054402AEB9237001E3BE6 /* MacVideoPlayerView.swift in Sources */,
+				A59054352AEB9237001E3BE6 /* KSParseProtocol.swift in Sources */,
+				A59054142AEB9237001E3BE6 /* KSVideoPlayer.swift in Sources */,
 				A52069482AE64B99001A8CCE /* VideoPlayer.swift in Sources */,
+				A59054412AEB9237001E3BE6 /* PlayerFullScreenViewController.swift in Sources */,
+				A590543F2AEB9237001E3BE6 /* KSPlayerItem.swift in Sources */,
+				A590541E2AEB9237001E3BE6 /* AudioRecognizer.swift in Sources */,
+				A59054422AEB9237001E3BE6 /* PlayerTransitionAnimator.swift in Sources */,
+				A59054202AEB9237001E3BE6 /* AVFFmpegExtension.swift in Sources */,
+				A59054182AEB9237001E3BE6 /* PlayerToolBar.swift in Sources */,
+				A590543C2AEB9237001E3BE6 /* BrightnessVolume.swift in Sources */,
+				A59054212AEB9237001E3BE6 /* AVFoundationExtension.swift in Sources */,
+				A59054252AEB9237001E3BE6 /* FFmpegDecode.swift in Sources */,
+				A59054362AEB9237001E3BE6 /* KSSubtitle.swift in Sources */,
+				A59054392AEB9237001E3BE6 /* KSVideoPlayerView.swift in Sources */,
+				A59054302AEB9237001E3BE6 /* DisplayModel.swift in Sources */,
+				A590543B2AEB9237001E3BE6 /* Slider.swift in Sources */,
+				A590542E2AEB9237001E3BE6 /* VideoToolboxDecode.swift in Sources */,
+				A590542B2AEB9237001E3BE6 /* Model.swift in Sources */,
+				A590542C2AEB9237001E3BE6 /* Resample.swift in Sources */,
 				A51592372AE151F600EA0FD7 /* SceneDelegate.swift in Sources */,
+				A59054372AEB9237001E3BE6 /* SubtitleDataSouce.swift in Sources */,
+				A59054242AEB9237001E3BE6 /* FFmpegAssetTrack.swift in Sources */,
 				A5769A882AE160A40080D951 /* Math.swift in Sources */,
+				A59054432AEB9237001E3BE6 /* SeekView.swift in Sources */,
+				A59054132AEB9237001E3BE6 /* KSPlayerLayer.swift in Sources */,
+				A590542D2AEB9237001E3BE6 /* SubtitleDecode.swift in Sources */,
+				A590541C2AEB9237001E3BE6 /* UXKit.swift in Sources */,
+				A59054292AEB9237001E3BE6 /* MEPlayerItemTrack.swift in Sources */,
+				A59054172AEB9237001E3BE6 /* AppKitExtend.swift in Sources */,
+				A59054102AEB9237001E3BE6 /* KSAVPlayer.swift in Sources */,
+				A590543D2AEB9237001E3BE6 /* IOSVideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +799,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A59053272AEB884A001E3BE6 /* XCLocalSwiftPackageReference "../../../../Users/tecocraft/Downloads/FFmpegKit-0340040c9ee9c3a7efceff73ec92476767ef9802" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../../Users/tecocraft/Downloads/FFmpegKit-0340040c9ee9c3a7efceff73ec92476767ef9802";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A59053282AEB884A001E3BE6 /* FFmpegKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FFmpegKit;
+		};
+		A590532A2AEB884A001E3BE6 /* Libavcodec */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libavcodec;
+		};
+		A590532C2AEB884A001E3BE6 /* Libavfilter */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libavfilter;
+		};
+		A590532E2AEB884A001E3BE6 /* Libavformat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libavformat;
+		};
+		A59053302AEB884A001E3BE6 /* Libavutil */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Libavutil;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A51592292AE151F600EA0FD7 /* Project object */;
 }

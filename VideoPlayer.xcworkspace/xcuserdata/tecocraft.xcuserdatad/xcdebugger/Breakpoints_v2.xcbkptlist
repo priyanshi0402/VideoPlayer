@@ -3,4 +3,86 @@
    uuid = "94226A5D-F89D-4256-B24A-EC04780F35E9"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8707679-688F-4AE2-9816-1CB00E749D19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Helpers/Custom Class/VideoPlayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "extractSubtitles(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B8707679-688F-4AE2-9816-1CB00E749D19 - 9d09e6afebbc4749"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.VideoPlayer.extractSubtitles(from: __C.AVAsset) -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Tecocraft_C/iOS%20demo/VideoPlayer/VideoPlayer/Helpers/Custom%20Class/VideoPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "253"
+                  endingLineNumber = "253"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "B8707679-688F-4AE2-9816-1CB00E749D19 - 9d09e6afebbc3ae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.VideoPlayer.extractSubtitles(from: __C.AVAsset) -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Tecocraft_C/iOS%20demo/VideoPlayer/VideoPlayer/Helpers/Custom%20Class/VideoPlayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "287"
+                  endingLineNumber = "287"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB382979-ADD2-43F4-9D3C-1BB4C2DD0420"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Helpers/Custom Class/VideoPlayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "switchTrack(index:isFirstTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41E7CD1A-3997-4712-99E7-2C6E7C7CE31F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Helpers/Custom Class/VideoPlayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "switchTrack(index:isFirstTime:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

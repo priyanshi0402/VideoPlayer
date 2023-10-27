@@ -45,9 +45,9 @@ open class DropDown: UITextField {
         }
     }
 
-    @IBInspectable public var cornerRadius: CGFloat = 5.0 {
+    @IBInspectable public var cornerRadiusDrop: CGFloat = 5.0 {
         didSet {
-            layer.cornerRadius = cornerRadius
+            layer.cornerRadius = cornerRadiusDrop
         }
     }
 
