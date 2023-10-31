@@ -6,118 +6,17 @@
 //
 import AVFoundation
 
-//class SubtitleExtractor {
-//    private var asset: AVAsset
-//    private var subtitleTrack: AVAssetTrack?
-//
-//    init(avAsset: AVAsset) {
-//        asset = avAsset
-//        subtitleTrack = findSubtitleTrack()
-//    }
-//
-//    private func findSubtitleTrack() -> AVAssetTrack? {
-//        for track in asset.tracks {
-//            if track.mediaType == AVMediaType.subtitle {
-//                return track
-//            }
-//        }
-//        return nil
-//    }
-//
-//    func extractSubtitles() {
-//        guard let subtitleTrack = subtitleTrack else {
-//            print("Subtitle track not found in the video.")
-//            return
-//        }
-//
-//        do {
-//            let reader = try AVAssetReader(asset: asset)
-//
-//            let outputSettings: [String: Any] = [
-//                kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)
-//            ]
-//
-//            let output = AVAssetReaderTrackOutput(track: subtitleTrack, outputSettings: nil)
-//
-//            reader.add(output)
-//            reader.startReading()
-//
-//            while let sampleBuffer = output.copyNextSampleBuffer() {
-////                if let blockBufferRef = CMSampleBufferGetDataBuffer(sampleBuffer) {
-////                    var lengthAtOffset: size_t = 0
-////                    var totalLength: size_t = 0
-////                    var data: UnsafeMutablePointer<Int8>?
-////                    
-////
-////                    if CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(
-////                        sampleBuffer,
-////                        bufferListSizeNeededOut: nil,
-////                        bufferListOut: nil,
-////                        bufferListSize: size_t(0),
-////                        blockBuffer: blockBufferRef,
-////                        blockBufferOffset: 0,
-////                        blockBufferLength: size_t(CMSampleBufferGetTotalSampleSize(sampleBuffer)),
-////                        flags: 0,
-////                        blockBufferPointerOut: nil
-////                    ) == noErr {
-////                        if let dataBuffer = bufferList.mBuffers.mData {
-////                            data = UnsafeMutablePointer<Int8>(dataBuffer)
-////                            data?.advanced(by: Int(lengthAtOffset))
-////                            // Process the subtitle data here
-////                            // You may want to store or handle the subtitle text here
-////                        }
-////                    }
-////                }
-//                
-//                if let subtitleData = CMSampleBufferGetDataBuffer(sampleBuffer) {
-//                    let length = CMBlockBufferGetDataLength(subtitleData)
-//                    var subtitleText = ""
-//                    let dataPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
-//                    
-//                    CMBlockBufferCopyDataBytes(subtitleData, atOffset: 0, dataLength: length, destination: dataPointer)
-//                    if let subtitleString = String(bytesNoCopy: dataPointer, length: length, encoding: .isoLatin1, freeWhenDone: true) {
-//                        subtitleText = subtitleString
-//                    }
-//                    
-//                    // Process the extracted subtitle text
-//                    print(subtitleText)
-//                }
-//                
-////                if let blockBuffer = CMSampleBufferGetDataBuffer(sampleBuffer) {
-////                       var bufferLength: size_t = 0
-////                       var bufferData = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
-////                       
-////                       if CMBlockBufferGetDataPointer(blockBuffer, atOffset: 0, lengthAtOffsetOut: &bufferLength, totalLengthOut: nil, dataPointerOut: &bufferData) == kCMBlockBufferNoErr {
-////                           if let data = bufferData {
-////                               // Process the subtitle data here (data contains the subtitle text)
-////                               let subtitleText = String(cString: data)
-////                               if let subtitleString = String(bytesNoCopy: dataPointer, length: length, encoding: .isoLatin1, freeWhenDone: true) {
-////                                   print(subtitleText)
-////                               }
-////                               print(subtitleText)
-////                           }
-////                       }
-////                   }
-//            }
-//
-//            reader.cancelReading()
-//        } catch {
-//            print("Error extracting subtitles: \(error)")
-//        }
-//    }
-//}
-
 class SubtitleExtractor {
     private var asset: AVAsset
     private var subtitleTrack: AVAssetTrack?
     var previousFrameTime = CMTime.zero
     var previousActualFrameTime = CFAbsoluteTimeGetCurrent()
-
+    
     init(videoURL: URL) {
         asset = AVAsset(url: videoURL)
         subtitleTrack = findSubtitleTrack()
     }
-
+    
     private func findSubtitleTrack() -> AVAssetTrack? {
         for track in asset.tracks {
             if track.mediaType == AVMediaType.subtitle {
@@ -162,7 +61,7 @@ class SubtitleExtractor {
         }
         
     }
-
+    
     func extractSubtitles(at targetTime: CMTime) {
         guard let subtitleTrack = subtitleTrack else {
             print("Subtitle track not found in the video.")
@@ -214,33 +113,33 @@ class SubtitleExtractor {
             print("Subtitle track not found in the video.")
             return
         }
-
+        
         do {
             let assetReader = try AVAssetReader(asset: asset)
-
+            
             let outputSettings: [String: Any] = [
                 kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)
             ]
-
+            
             let output = AVAssetReaderTrackOutput(track: subtitleTrack, outputSettings: nil)
             assetReader.add(output)
             assetReader.startReading()
             
             var subtitles: [String] = []
-
+            
             while let sampleBuffer = output.copyNextSampleBuffer() {
                 
                 if let subtitleData = CMSampleBufferGetDataBuffer(sampleBuffer) {
                     let length = CMBlockBufferGetDataLength(subtitleData)
                     var subtitleText = ""
                     let dataPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
-
+                    
                     CMBlockBufferCopyDataBytes(subtitleData, atOffset: 0, dataLength: length, destination: dataPointer)
                     if let subtitleString = String(bytesNoCopy: dataPointer, length: length, encoding: .isoLatin1, freeWhenDone: true) {
                         subtitleText = subtitleString
                     }
                     subtitles.append(subtitleText)
-
+                    
                     // Process the extracted subtitle text
                     print(subtitleText)
                 }
