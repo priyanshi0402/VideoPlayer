@@ -33,6 +33,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomControlView: UIView!
     
     private var controlsToggleWorkItem: DispatchWorkItem?
+    let videoUrl = Bundle.main.url(forResource: "test_video", withExtension: "mp4")
+
+    var subtitleExtractor: SubtitleExtractor {
+        guard let url = self.videoUrl else { return SubtitleExtractor(videoURL: URL(string: "")!) }
+        return SubtitleExtractor(videoURL: url)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,21 +58,26 @@ class ViewController: UIViewController {
         tapGestureRecognizer.delegate = self
         self.videoContainerView.addGestureRecognizer(tapGestureRecognizer)
         
-//        let subtitle = avsu
     }
     
     private func setUpVideoView() {
         
-        guard let url = Bundle.main.url(forResource: "test_video", withExtension: "mp4") else { return }
+        guard let url = self.videoUrl else { return }
         videoContainerView.setupVideoPlayer(url: url)
         lblStartTime.text = self.timeFormatted(totalSeconds: 0)
         lblEndTime.text = self.timeFormatted(totalSeconds: UInt(self.videoContainerView.videoLength))
         self.videoContainerView.playingVideo = { [weak self, weak videoContainerView] progress in
             guard let strongSelf = self, let strongVideoPlayerView = videoContainerView else { return }
+            //            print("videoContainerView.playingVideo ====>", progress)
             strongSelf.progressSlider.value = progress
             let currentTime = strongVideoPlayerView.currentTime
             strongSelf.lblStartTime.text = strongSelf.timeFormatted(totalSeconds: UInt(currentTime))
         }
+        
+//                let subtitleDecoder = SubtitleExtractor(videoPath: url.path)
+//        //        subtitleDecoder.subDelegate = self
+//        //        // Decode and process subtitles
+//                subtitleDecoder.decodeSubtitles()
         
         self.videoContainerView.stoppedVideo = { [weak self] in
             guard let strongSelf = self else { return }
@@ -142,6 +153,11 @@ class ViewController: UIViewController {
         print("progressSliderChanged", slider.value)
         self.videoContainerView.seek(value: Double(slider.value))
         self.videoContainerView.playVideo()
+        
+        let currentTime = self.videoContainerView.currentTime
+        let time = CMTime(seconds: currentTime, preferredTimescale: 1000)
+        
+//        subtitleExtractor.extractSubtitles(at: time)
     }
     
     @objc internal func progressSliderBeginTouch() {
@@ -186,13 +202,13 @@ class ViewController: UIViewController {
     }
     
     private func timeFormatted(totalSeconds: UInt) -> String {
+        //        print("timeFormatted ====>", totalSeconds)
         let seconds = totalSeconds % 60
         let minutes = (totalSeconds / 60) % 60
         let hours = totalSeconds / 3600
-        
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
-
+    
 }
 
 extension ViewController: UIGestureRecognizerDelegate {

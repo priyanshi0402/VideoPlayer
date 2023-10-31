@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,14 +17,10 @@
 		A52069482AE64B99001A8CCE /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52069472AE64B99001A8CCE /* VideoPlayer.swift */; };
 		A5769A862AE1607A0080D951 /* Scrubber.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5769A852AE1607A0080D951 /* Scrubber.swift */; };
 		A5769A882AE160A40080D951 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5769A872AE160A40080D951 /* Math.swift */; };
-		A59053292AEB884A001E3BE6 /* FFmpegKit in Frameworks */ = {isa = PBXBuildFile; productRef = A59053282AEB884A001E3BE6 /* FFmpegKit */; };
-		A590532B2AEB884A001E3BE6 /* Libavcodec in Frameworks */ = {isa = PBXBuildFile; productRef = A590532A2AEB884A001E3BE6 /* Libavcodec */; };
-		A590532D2AEB884A001E3BE6 /* Libavfilter in Frameworks */ = {isa = PBXBuildFile; productRef = A590532C2AEB884A001E3BE6 /* Libavfilter */; };
-		A590532F2AEB884A001E3BE6 /* Libavformat in Frameworks */ = {isa = PBXBuildFile; productRef = A590532E2AEB884A001E3BE6 /* Libavformat */; };
-		A59053312AEB884A001E3BE6 /* Libavutil in Frameworks */ = {isa = PBXBuildFile; productRef = A59053302AEB884A001E3BE6 /* Libavutil */; };
 		A59054472AEB9545001E3BE6 /* SwiftDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59054462AEB9545001E3BE6 /* SwiftDecoder.swift */; };
 		A59964DC2AE25E740027A007 /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59964DB2AE25E740027A007 /* iOSDropDown.swift */; };
 		A59964E32AE275C90027A007 /* test_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A59964E22AE275C90027A007 /* test_video.mp4 */; };
+		A5B0E3BC2AF0BA5D00231A78 /* SubtitleExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B0E3BB2AF0BA5D00231A78 /* SubtitleExtractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +40,7 @@
 		A59054462AEB9545001E3BE6 /* SwiftDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDecoder.swift; sourceTree = "<group>"; };
 		A59964DB2AE25E740027A007 /* iOSDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 		A59964E22AE275C90027A007 /* test_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = test_video.mp4; sourceTree = "<group>"; };
+		A5B0E3BB2AF0BA5D00231A78 /* SubtitleExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleExtractor.swift; sourceTree = "<group>"; };
 		D5F6C12AE3BF256AA41EAAD4 /* Pods_VideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,12 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A59053292AEB884A001E3BE6 /* FFmpegKit in Frameworks */,
 				2D5A0FBE0C53E013F0B51CEE /* Pods_VideoPlayer.framework in Frameworks */,
-				A590532B2AEB884A001E3BE6 /* Libavcodec in Frameworks */,
-				A59053312AEB884A001E3BE6 /* Libavutil in Frameworks */,
-				A590532F2AEB884A001E3BE6 /* Libavformat in Frameworks */,
-				A590532D2AEB884A001E3BE6 /* Libavfilter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +123,7 @@
 				A5769A872AE160A40080D951 /* Math.swift */,
 				A52069472AE64B99001A8CCE /* VideoPlayer.swift */,
 				A59054462AEB9545001E3BE6 /* SwiftDecoder.swift */,
+				A5B0E3BB2AF0BA5D00231A78 /* SubtitleExtractor.swift */,
 			);
 			path = "Custom Class";
 			sourceTree = "<group>";
@@ -162,11 +155,6 @@
 			);
 			name = VideoPlayer;
 			packageProductDependencies = (
-				A59053282AEB884A001E3BE6 /* FFmpegKit */,
-				A590532A2AEB884A001E3BE6 /* Libavcodec */,
-				A590532C2AEB884A001E3BE6 /* Libavfilter */,
-				A590532E2AEB884A001E3BE6 /* Libavformat */,
-				A59053302AEB884A001E3BE6 /* Libavutil */,
 			);
 			productName = VideoPlayer;
 			productReference = A51592312AE151F600EA0FD7 /* VideoPlayer.app */;
@@ -197,7 +185,6 @@
 			);
 			mainGroup = A51592282AE151F600EA0FD7;
 			packageReferences = (
-				A59053272AEB884A001E3BE6 /* XCLocalSwiftPackageReference "../../../../Users/tecocraft/Downloads/FFmpegKit-0340040c9ee9c3a7efceff73ec92476767ef9802" */,
 			);
 			productRefGroup = A51592322AE151F600EA0FD7 /* Products */;
 			projectDirPath = "";
@@ -275,6 +262,7 @@
 				A5769A862AE1607A0080D951 /* Scrubber.swift in Sources */,
 				A51592352AE151F600EA0FD7 /* AppDelegate.swift in Sources */,
 				A52069482AE64B99001A8CCE /* VideoPlayer.swift in Sources */,
+				A5B0E3BC2AF0BA5D00231A78 /* SubtitleExtractor.swift in Sources */,
 				A51592372AE151F600EA0FD7 /* SceneDelegate.swift in Sources */,
 				A5769A882AE160A40080D951 /* Math.swift in Sources */,
 			);
@@ -519,36 +507,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		A59053272AEB884A001E3BE6 /* XCLocalSwiftPackageReference "../../../../Users/tecocraft/Downloads/FFmpegKit-0340040c9ee9c3a7efceff73ec92476767ef9802" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../../Users/tecocraft/Downloads/FFmpegKit-0340040c9ee9c3a7efceff73ec92476767ef9802";
-		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A59053282AEB884A001E3BE6 /* FFmpegKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = FFmpegKit;
-		};
-		A590532A2AEB884A001E3BE6 /* Libavcodec */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Libavcodec;
-		};
-		A590532C2AEB884A001E3BE6 /* Libavfilter */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Libavfilter;
-		};
-		A590532E2AEB884A001E3BE6 /* Libavformat */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Libavformat;
-		};
-		A59053302AEB884A001E3BE6 /* Libavutil */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Libavutil;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A51592292AE151F600EA0FD7 /* Project object */;
 }
