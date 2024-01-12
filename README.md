@@ -1,4 +1,4 @@
-# VideoPlaye
+# VideoPlayer
 
 A custom video player that provides enhanced functionality and a seamless video-watching experience. 
 This video player includes features like play, pause, rewind, fast-forward, switching video tracks, and enabling subtitles, making it a versatile tool for video playback.
